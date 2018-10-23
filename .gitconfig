@@ -1,0 +1,15 @@
+[user]
+	name = CJ Davis
+	email = cj@cjdavis.me
+[branch]
+	autosetuprebase = always
+[rebase]
+	autostash = true
+[push]
+	default = current
+[core]
+	excludesFile = /Users/crevax/.gitignore_global
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[alias]
+	fp = push --force-with-lease
