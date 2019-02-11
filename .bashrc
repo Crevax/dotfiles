@@ -53,3 +53,7 @@ export PATH=/usr/local/heroku/bin:$PATH
 
 # added by travis gem
 [ -f /Users/crevax/.travis/travis.sh ] && source /Users/crevax/.travis/travis.sh
+
+if [[ -n "${ConEmuPID}" ]]; then
+  PROMPT_COMMAND='ConEmuC -StoreCWD'
+fi
