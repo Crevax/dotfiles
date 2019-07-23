@@ -15,7 +15,7 @@ function Get-GitColor () {
 }
 
 function Write-BranchName () {
-    $branch =$(git branch) -replace "^\*\s", ""
+    $branch =$(git branch) -match "^\*\s" -replace "^\*\s",""
 
     if ($branch -ne "") {
         $color = Get-GitColor
