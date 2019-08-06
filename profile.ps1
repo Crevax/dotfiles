@@ -1,3 +1,7 @@
+Set-PSReadlineKeyHandler -Key Tab -Function Complete
+
+ssh-add
+
 if (Test-Path "$PSScriptRoot\employer-specific.ps1" -PathType Leaf) {
     . $PSScriptRoot\employer-specific.ps1
 }
@@ -15,13 +19,25 @@ function Get-GitColor () {
 }
 
 function Write-BranchName () {
-    $branch = $branch = git branch --show-current
+    $branch = git branch --show-current
 
     if ($branch -ne "") {
         $color = Get-GitColor
         Write-Host " ($branch)" -ForegroundColor $color -NoNewLine
     } else {
         Write-Host " (no branches)" -ForegroundColor "cyan" -NoNewLine
+    }
+}
+
+function Edit-Profile () {
+    code $Profile.CurrentUserAllHosts
+}
+
+function pyserver ($port) {
+    if ($port) {
+        python -m http.server $port
+    } else {
+        python -m http.server 8080
     }
 }
 
