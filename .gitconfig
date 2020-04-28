@@ -12,6 +12,13 @@
 [url "git@gitlab.com:"]
 	insteadOf = https://gitlab.com/
 [alias]
+	a = add
+	c = commit
+	co = checkout
+	d = pull
+	f = fetch
+	s = status
+	u = push
 	fp = push --force-with-lease
         # From: https://stackoverflow.com/a/7532131/1324851
         apply-gitignore = !git ls-files -ci --exclude-standard -z | xargs -0 git rm --cached
